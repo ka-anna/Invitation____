@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Հրավիրված եք՝ Մեր Զինվորի Դիմարմանը</title>
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Sylfaen', 'Noto Sans Armenian', serif, sans-serif;
+      background: url('https://a.d-cd.net/HIAAAgBdgeA-1920.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #5e4637;
+      min-height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      padding: 30px 15px;
+    }
+
+    .invite {
+      background-color: rgba(255, 255, 255, 0.95);
+      width: 100%;
+      max-width: 520px;
+      border-radius: 16px;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-family: 'Sylfaen', serif;
+      color: #3e4d3a;
+      margin-bottom: 28px;
+      line-height: 1.5;
+      user-select: none;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-top: 40px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 1.6;
+      margin: 14px 0;
+      font-weight: 400;
+      user-select: text;
+    }
+
+    a {
+      color: #3e4d3a;
+      font-weight: 600;
+      text-decoration: underline;
+      word-break: break-word;
+      user-select: text;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: #2a3a27;
+    }
+
+    #countdown {
+      font-style: italic;
+      font-size: 26px;
+      font-weight: 700;
+      color: #222;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 8px 14px;
+      border-radius: 8px;
+      margin: 24px 0;
+      border: 1px solid #3e4d3a;
+      display: inline-block;
+      user-select: none;
+    }
+
+    @media (max-width: 350px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      #countdown {
+        font-size: 22px;
+        padding: 6px 10px;
+        margin: 20px 0;
+      }
+
+      .invite {
+        padding: 25px 15px;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="invite" role="main" aria-label="Հրավեր Մեր Զինվորի Դիմարմանը">
+    <h1>Սիրելի հյուրեր,</h1>
+    <p>Ցանկանում ենք Ձեզ հետ կիսել մեր<br />ընտանիքում սպասվող կարևոր իրադարձությունը:</p>
+    <p><strong>Մեր ԶԻՆՎՈՐԻ<br />Վերադարձին մնացել է</strong></p>
+    <div id="countdown" aria-live="polite" aria-atomic="true">Բեռնվում է...</div>
+
+    <p>Սիրով հրավիրում ենք Ձեզ՝ կիսելու մեր կյանքի կարևոր ու շատ սպասված պահերը:</p>
+
+    <p><strong>Դիմավորում՝</strong><br />
+      <em>17.07.2025թ.</em><br />
+      <a href="https://yandex.com/maps/10262/yerevan/house/YE0YcwFiSEYEQFpqfX15dHlmZg==/?ll=44.562488%2C40.185509&amp;z=18.59" target="_blank" rel="noopener noreferrer">
+        <em>ք.Երևան, Բ.Մուրադյան 14</em>
+      </a>
+    </p>
+
+    <p><strong>Խնջույք՝</strong><br />
+      <em>21.07.2025թ.</em><br />
+      «Նոր Դվին» ռեստորանային համալիր<br />
+      <a href="https://yandex.com/maps/org/215745175248/?ll=44.292126%2C40.176574&amp;z=17.17" target="_blank" rel="noopener noreferrer">
+        <em>ք.Էջմիածին, Աշտարակի խճուղի, 1 շենք</em>
+      </a>
+    </p>
+
+    <h2>Սիրով սպասում ենք...</h2>
+  </main>
+
+  <script>
+    // Countdown function
+    function updateCountdown() {
+      const now = new Date();
+
+      let target = new Date(now.getFullYear(), 6, 17, 17, 0, 0);
+
+      if (now > target) {
+        target = new Date(now.getFullYear() + 1, 6, 17, 17, 0, 0);
+      }
+
+      const diff = target - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').textContent = 'Այսօր';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('countdown').textContent =
+        `${days} օր ${hours} ժամ ${minutes} րոպե ${seconds} վայրկյան`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Create YouTube iframe on page load, autoplay muted (allowed by browser)
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.width = 0;
+    iframe.height = 0;
+    iframe.src = 'https://www.youtube.com/embed/0X9ebnGbBrs?autoplay=1&loop=1&playlist=0X9ebnGbBrs&controls=0&mute=1';
+    iframe.frameBorder = 0;
+    iframe.allow = 'autoplay';
+    document.body.appendChild(iframe);
+
+    // On first scroll event, unmute music by replacing iframe with new one unmuted
+    function onFirstScroll() {
+      // Remove old muted iframe
+      iframe.remove();
+
+      // Create new iframe unmuted
+      const newIframe = document.createElement('iframe');
+      newIframe.style.display = 'none';
+      newIframe.width = 0;
+      newIframe.height = 0;
+      newIframe.src = 'https://www.youtube.com/embed/0X9ebnGbBrs?autoplay=1&loop=1&playlist=0X9ebnGbBrs&controls=0&mute=0';
+      newIframe.frameBorder = 0;
+      newIframe.allow = 'autoplay';
+      document.body.appendChild(newIframe);
+
+      // Remove scroll listener after first scroll
+      window.removeEventListener('scroll', onFirstScroll);
+    }
+
+    window.addEventListener('scroll', onFirstScroll, { once: true });
+  </script>
+</body>
+</html>
